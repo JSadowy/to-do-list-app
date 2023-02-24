@@ -29,7 +29,7 @@ export const CreateTaskForm = ({ handleCreateNewTask }) => {
         <form onSubmit={handleSubmit}>
             <p>
                 <label>
-                    Create New Task
+                    <span>Create New Task </span>
                     <input type="text" value={newTask.taskName} onChange={(e) => handleNameChange(e.target.value)}></input>
                     <input type="date" value={newTask.taskDate} onChange={(e) => handleDateChange(e.target.value)}></input>
                 </label>
