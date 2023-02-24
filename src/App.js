@@ -1,28 +1,31 @@
 import './App.css';
 import { useState } from 'react';
-import { todoData } from './todoData';
-import { ToDoDisplaying } from './Components/ToDoDisplaying'
-import { CreateTask } from './Components/CreateTask';
+import { todoData } from './constants/INITIAL_ITEMS';
+import { ToDoListItem } from './components/ToDoListItem'
+import { CreateTaskForm } from './components/CreateTaskForm';
 
 function App() {
   const [todo, setTodo] = useState(todoData)
 
   const handleCreateNewTask = (newTask) => {
-    const newToDos = [...todo, { title: newTask.taskName, date: newTask.taskDate }]
-    setTodo(newToDos)
+    const newToDo = { title: newTask.taskName, date: newTask.taskDate };
+    setTodo(prev => [...prev, newToDo]);
   }
   return (
     <div className="App">
       <h1>To Do App</h1>
-      {
-        todo.map((todo, date) => (
-          <ToDoDisplaying key={todo.index}
-            date={date}
-            todo={todo} />
-        ))
-      }
+      <ul>
+        {
+          todo.map((todo, index) => (
+            <ToDoListItem key={todo.index}
+              todo={todo} />
+          ))
+        }
+      </ul>
       <div>
-        <CreateTask handleCreateNewTask={handleCreateNewTask} />
+        <CreateTaskForm key={handleCreateNewTask}
+          handleCreateNewTask={handleCreateNewTask}
+        />
       </div>
     </div>
   )
