@@ -17,8 +17,11 @@ export default function Main() {
         navigate(-1);
     };
     return (
+
         <div id="main">
-            <h1>To Do App</h1>
+            <div id='return'>
+                <button id="return-button" onClick={onClick}>Back</button>
+            </div>
             <ul>
                 {
                     todo.map((todo, index) => (
@@ -27,19 +30,19 @@ export default function Main() {
                     ))
                 }
             </ul>
-            <div>
-                <CreateTaskForm key={handleCreateNewTask}
-                    handleCreateNewTask={handleCreateNewTask}
-                />
-            </div>
+
             <div>
                 <button>
                     Sort
                 </button>
             </div>
-            <div id='return'>
-                <button onClick={onClick}>Back</button>
+            <div>
+                <CreateTaskForm key={handleCreateNewTask}
+                    handleCreateNewTask={handleCreateNewTask}
+                />
             </div>
+
+
         </div>
     )
 };

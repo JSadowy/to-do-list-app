@@ -26,15 +26,15 @@ export const CreateTaskForm = ({ handleCreateNewTask }) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <p>
-                <label>
-                    <span>Create New Task </span>
-                    <input type="text" value={newTask.taskName} onChange={(e) => handleNameChange(e.target.value)}></input>
-                    <input type="date" value={newTask.taskDate} onChange={(e) => handleDateChange(e.target.value)}></input>
-                </label>
-            </p>
-            <button type="submit">Add new task </button>
+        <form className="new-task-form" onSubmit={handleSubmit}>
+
+            <span className="new-task">Create New Task </span>
+            <label for="task-name">Task</label>
+            <input type="text" value={newTask.taskName} onChange={(e) => handleNameChange(e.target.value)}></input>
+            <label for="task-date">Date</label>
+            <input type="date" value={newTask.taskDate} onChange={(e) => handleDateChange(e.target.value)}></input>
+
+            <button id="submit-button" type="submit">Add new task </button>
         </form>
     )
 }
