@@ -1,6 +1,6 @@
-export const ToDoListItem = ({ todo }) => {
+export const ToDoListItem = ({ todo, index }) => {
     return (
-        <li key={todo.title}>
+        <li key={todo.index}>
             {todo.title} {todo.date}
         </li>
     )

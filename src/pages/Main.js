@@ -3,6 +3,7 @@ import { todoData } from '../constants/INITIAL_ITEMS';
 import { ToDoListItem } from '../components/ToDoListItem'
 import { CreateTaskForm } from '../components/CreateTaskForm';
 import { useNavigate } from 'react-router-dom';
+import SortByDate from '../components/SortByDate';
 
 export default function Main() {
     const [todo, setTodo] = useState(todoData)
@@ -34,6 +35,7 @@ export default function Main() {
             <div>
                 <button>
                     Sort
+                    <SortByDate />
                 </button>
             </div>
             <div>
