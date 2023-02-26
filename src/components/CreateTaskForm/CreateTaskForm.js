@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { formatDate } from "../utils/Date";
+import { formatDate } from "../../utils/Date";
 
 const defaultValues = {
   taskName: "",
@@ -26,23 +26,27 @@ export const CreateTaskForm = ({ handleCreateNewTask }) => {
   }
 
   return (
-    <form className="new-task-form" onSubmit={handleSubmit}>
+    <form className="new-task-form" data-testid="form" onSubmit={handleSubmit}>
       <span className="new-task">Create New Task </span>
       <label htmlFor="task-name">Task</label>
       <input
+        name="task-name"
+        id="task-name"
         type="text"
         value={newTask.taskName}
         onChange={(e) => handleNameChange(e.target.value)}
       ></input>
       <label htmlFor="task-date">Date</label>
       <input
+        name="task-date"
+        id="task-date"
         type="date"
         value={newTask.taskDate}
         onChange={(e) => handleDateChange(e.target.value)}
       ></input>
 
       <button id="submit-button" type="submit">
-        Add new task{" "}
+        Add new task
       </button>
     </form>
   );
