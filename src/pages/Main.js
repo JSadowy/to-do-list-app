@@ -13,6 +13,10 @@ export default function Main() {
     setTodo((prev) => [...prev, newToDo]);
   };
 
+  function sort() {
+    
+  }
+
   const navigate = useNavigate();
   function onClick() {
     navigate(-1);
@@ -31,10 +35,10 @@ export default function Main() {
       </ul>
 
       <div>
-        <button>
+        <button onClick={sort}>
           Sort
-          <SortByDate />
         </button>
+        <SortByDate />
       </div>
       <div>
         <CreateTaskForm
