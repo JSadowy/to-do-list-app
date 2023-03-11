@@ -1,21 +1,26 @@
 import { useState } from "react";
-import { todoData } from "../constants/INITIAL_ITEMS";
 import { ToDoListItem } from "../components/ToDoListItem";
-import { CreateTaskForm } from "../components/CreateTaskForm";
+import { CreateTaskForm } from "../components/CreateTaskForm/CreateTaskForm";
 import { useNavigate } from "react-router-dom";
 import SortByDate from "../components/SortByDate";
 
+
+
 export default function Main() {
-  const [todo, setTodo] = useState(todoData);
+  const [todo, setTodo] = useState([]);
+  const [counter, setCounter] = useState(2);
+
+
 
   const handleCreateNewTask = (newTask) => {
-    const newToDo = { title: newTask.taskName, date: newTask.taskDate };
+    const newToDo = { id: counter + 1, title: newTask.taskName, date: newTask.taskDate };
+    setCounter((prev) => prev + 1);
     setTodo((prev) => [...prev, newToDo]);
   };
 
-  function sort() {
-    
-  }
+
+
+
 
   const navigate = useNavigate();
   function onClick() {
@@ -33,13 +38,7 @@ export default function Main() {
           <ToDoListItem key={index} todo={todo} />
         ))}
       </ul>
-
-      <div>
-        <button onClick={sort}>
-          Sort
-        </button>
-        <SortByDate />
-      </div>
+      <SortByDate todo={todo} setTodo={setTodo} />
       <div>
         <CreateTaskForm
           key={handleCreateNewTask}

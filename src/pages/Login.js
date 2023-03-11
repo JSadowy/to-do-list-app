@@ -10,7 +10,7 @@ export default function Login() {
 
     function validateForm() {
 
-        return (email.length > 0 && password.length > 0);
+        return (email === 'abc' && password === 'abc');
 
     }
 

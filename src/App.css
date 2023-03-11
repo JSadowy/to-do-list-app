@@ -103,8 +103,13 @@ ul>li {
 }
 
 #return-button {
-  padding: 5px 20px;
+  padding: 5px 30px;
   border-radius: 50px;
   cursor: pointer;
 }
 
+.sort-date-btn {
+  border-radius: 50px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
