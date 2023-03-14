@@ -8,7 +8,7 @@ import SortByDate from "../components/SortByDate";
 
 export default function Main() {
   const [todo, setTodo] = useState([]);
-  const [counter, setCounter] = useState(2);
+  const [counter, setCounter] = useState(0);
 
 
 
@@ -18,7 +18,12 @@ export default function Main() {
     setTodo((prev) => [...prev, newToDo]);
   };
 
-
+  const deleteTask = (id) => {
+    setTodo((prev) => {
+      const filteredTodo = prev.filter((newTodo) => newTodo.id !== id)
+      return filteredTodo;
+    });
+  }
 
 
 
@@ -33,13 +38,22 @@ export default function Main() {
           Back
         </button>
       </div>
-      <ul>
-        {todo.map((todo, index) => (
-          <ToDoListItem key={index} todo={todo} />
-        ))}
-      </ul>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+          </tr>
+          {todo.map((todo, index) => (
+            <ToDoListItem deleteTask={deleteTask} key={index} todo={todo} />
+          ))}
+
+        </tbody>
+      </table>
       <SortByDate todo={todo} setTodo={setTodo} />
       <div>
+
         <CreateTaskForm
           key={handleCreateNewTask}
           handleCreateNewTask={handleCreateNewTask}

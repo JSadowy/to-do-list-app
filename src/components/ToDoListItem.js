@@ -1,7 +1,9 @@
-export const ToDoListItem = ({ todo, index }) => {
+export const ToDoListItem = ({ todo, deleteTask }) => {
     return (
-        <li key={todo.index}>
-            {todo.title} {todo.date}
-        </li>
+        <tr key={todo.index}>
+            <td>{todo.title}</td>
+            <td>{todo.date}</td>
+            <td className="delete-btn" onClick={() => deleteTask(todo.id)}>Delete</td>
+        </tr>
     )
 }

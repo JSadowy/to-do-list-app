@@ -6,7 +6,11 @@ body {
   justify-items: center;
   align-items: center;
   background-color: #3a3a3a;
-  color: #edf823
+  color: #f9f9f9
+}
+
+#root {
+  width: 50vw;
 }
 
 .App {
@@ -58,7 +62,7 @@ input {
 
 
 span.new-task {
-  color: #be0f0f;
+  color: #fcfafa;
 font-size: 25px;
 padding-bottom: 15px;
 }
@@ -76,30 +80,48 @@ form.new-task-form {
   text-transform: uppercase;
   background-color: #0481a4;
 }
+
+button {
+  opacity: 0.6;
+  background-color: #c2c2c2;
+  border-radius: 20px;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
 label {
   justify-items: left;
+  zoom: 105%;
 }
 
 ul>li {
   list-style-type: none;
 }
 
-#submit-button {
-  border-radius: 10px;
-}
 
-#submit-button:hover {
+
+#submit-button:active:hover {
   background-color:#14003a;
   color: #16db04;
   cursor: pointer;
   transition: 0.5s;
+  opacity: 1;
 }
+
+
 
 #return {
   align-self: flex-start;
   display: grid;
   justify-items: center;
   align-items: center;
+}
+
+#main {
+  display: flexbox;
+  padding: 10px;
+justify-content: center;
+align-items: center;
 }
 
 #return-button {
@@ -112,4 +134,42 @@ ul>li {
   border-radius: 50px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.delete-btn {
+  cursor: pointer;
+font-size: 12px;
+background-color: #6c6868;
+border: 1px solid #474747;
+}
+
+
+table {
+  background-color: #585858;
+  display: flexbox;
+  border: 2px solid #5e5d5d;
+  padding-bottom: 10px;
+  justify-content:space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+td {
+  background-color: #676767;
+  border-radius: 5px;
+  padding: 5px;
+  width: 40%;
+  margin: 10px;
+}
+
+tr {
+  border: 1px solid #61dafb;
+}
+
+th {
+  padding: 10px;
 }

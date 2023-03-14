@@ -25,6 +25,12 @@ export const CreateTaskForm = ({ handleCreateNewTask }) => {
     setNewTask((prev) => ({ ...prev, taskDate: newDate }));
   }
 
+  function validateForm() {
+
+    return (newTask.taskName !== '' && newTask.taskDate !== '');
+
+  }
+
   return (
     <form className="new-task-form" data-testid="form" onSubmit={handleSubmit}>
       <span className="new-task">Create New Task </span>
@@ -45,9 +51,9 @@ export const CreateTaskForm = ({ handleCreateNewTask }) => {
         onChange={(e) => handleDateChange(e.target.value)}
       ></input>
 
-      <button id="submit-button" type="submit">
+      <button id="submit-button" type="submit" disabled={!validateForm()} >
         Add new task
       </button>
-    </form>
+    </form >
   );
 };

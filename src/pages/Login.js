@@ -10,7 +10,7 @@ export default function Login() {
 
     function validateForm() {
 
-        return (email === 'abc' && password === 'abc');
+        return (email !== '' && password !== '');
 
     }
 
@@ -27,7 +27,7 @@ export default function Login() {
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input>
             <label>Password </label>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-            <button type="submit" disabled={!validateForm()}>Login</button>
+            <button type="submit" className="login-btn" disabled={!validateForm()}>Login</button>
         </form>
 
     )
