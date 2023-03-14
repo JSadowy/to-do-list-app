@@ -3,11 +3,12 @@ import { ToDoListItem } from "../components/ToDoListItem";
 import { CreateTaskForm } from "../components/CreateTaskForm/CreateTaskForm";
 import { useNavigate } from "react-router-dom";
 import SortByDate from "../components/SortByDate";
+import { todoData } from "../constants/INITIAL_ITEMS";
 
 
 
 export default function Main() {
-  const [todo, setTodo] = useState([]);
+  const [todo, setTodo] = useState(todoData);
   const [counter, setCounter] = useState(0);
 
 
