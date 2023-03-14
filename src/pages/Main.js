@@ -9,8 +9,7 @@ import { todoData } from "../constants/INITIAL_ITEMS";
 
 export default function Main() {
   const [todo, setTodo] = useState(todoData);
-  const [counter, setCounter] = useState(0);
-
+  const [counter, setCounter] = useState(2);
 
 
   const handleCreateNewTask = (newTask) => {
